@@ -80,5 +80,6 @@ class EditTodoFragment : Fragment(), RadioButtonListener, TodoSaveChangedClick {
     override fun onSaveChangesClick(v: View, obj: Todo) {
         viewModel.updateTodo(obj)
         Toast.makeText(v.context, "Todo Updated", Toast.LENGTH_SHORT).show()
+        Navigation.findNavController(v).popBackStack()
     }
 }
