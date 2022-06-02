@@ -24,6 +24,10 @@ interface ToDoDao {
     @Query("UPDATE todo SET is_done=:is_done WHERE uuid=:id")
     suspend fun update(id:Int, is_done:Int)
 
+//    query baru untuk week 10
+    @Update
+    suspend fun updateTodo(todo: Todo)
+
     @Delete
     suspend fun deleteTodo(todo:Todo)
 }
